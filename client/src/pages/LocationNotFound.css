@@ -1,0 +1,16 @@
+.location-not-found-container {
+  display: flex;
+  justify-content: center;
+  background-image: url('../images/notfoundbg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+}
+
+.location-not-found-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 160px;
+}

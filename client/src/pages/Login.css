@@ -1,0 +1,65 @@
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url('../images/loginbg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+}
+
+.login-heading {
+  width: fit-content;
+  margin-top: 110px;
+  margin-bottom: 180px;
+}
+
+.login-heading h4 {
+  text-align: center;
+}
+
+.login-container form {
+  height: 160px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.login-container input {
+  border-radius: 5px;
+  margin: 0;
+}
+
+.login-container .signin-btn {
+  background-color: #25807a;
+  color: white;
+  cursor: pointer;
+}
+
+.login-container input,
+.login-container .signin-btn {
+  width: 315px;
+  height: 35px;
+  border: none;
+  padding: 0;
+}
+
+.login-container input::placeholder {
+  text-align: center;
+}
+
+.login-container .signup-link-container {
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.login-container p {
+  color: #1b1b1b;
+}
+
+.login-container .signup {
+  color: #25807a;
+  width: 50px;
+}

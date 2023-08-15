@@ -1,0 +1,113 @@
+.profile-container {
+  background-color: #f5f5f5;
+  width: 100%;
+  height: 100vh;
+}
+
+.profile-container-inner {
+  width: 100%;
+  padding-top: 110px;
+}
+
+.profile-heading {
+  padding-left: 28px;
+}
+
+.profile-container h3 {
+  margin: 0;
+}
+
+.profile-container-form {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 8px;
+}
+
+.profile-container form,
+.button-container {
+  width: 315px;
+}
+
+.profile-container p {
+  text-align: center;
+  padding: 0 50px;
+}
+
+.profile-container .input-row {
+  display: flex;
+  flex-direction: column;
+  height: 60px;
+  margin-bottom: 22px;
+}
+
+.profile-container label {
+  font-size: 14px;
+}
+
+.profile-container .input-row label {
+  height: fit-content;
+  margin-bottom: 7px;
+}
+
+.profile-container input {
+  width: 100%;
+  height: 35px;
+  border: 1px solid #98a3ad;
+  border-radius: 5px;
+  padding: 0;
+  background-color: white;
+}
+
+.profile-container .input-column {
+  display: flex;
+  justify-content: space-between;
+}
+
+.profile-container .input-column-row {
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-container select {
+  height: 35px;
+  border-radius: 5px;
+  border: 1px solid #98a3ad;
+}
+
+.profile-container .input-column-row input {
+  width: 100%;
+}
+
+.button-container {
+  margin-top: 30px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.button-column {
+  width: 315px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.button-container button {
+  width: 80px;
+  height: 24px;
+}
+
+.save-btn,
+.logout-btn {
+  color: #fff;
+  background-color: #25807a;
+  border: none;
+}
+
+.cancel-btn,
+.edit-btn {
+  color: #98a3ad;
+  background-color: #fff;
+  border-color: #98a3ad;
+}
