@@ -274,22 +274,24 @@ const App = () => {
 
   return (
     <>
-      {!isBusinessDetailPage && <Header />}
+      {!isBusinessDetailPage && <Header isLoggedIn={isLoggedIn} />}
       <Routes>
         <Route
           path="/login"
           element={
-            isLoggedIn ? (
-              <Profile
-                setAllServices={setAllServices}
-                setOpenServices={setOpenServices}
-              />
-            ) : (
-              <Login
-                setAllServices={setAllServices}
-                setOpenServices={setOpenServices}
-              />
-            )
+            <Login
+              setAllServices={setAllServices}
+              setOpenServices={setOpenServices}
+            />
+          }
+        />
+        <Route
+          path="/profile"
+          element={
+            <Profile
+              setAllServices={setAllServices}
+              setOpenServices={setOpenServices}
+            />
           }
         />
         <Route path="/signup" element={<SignUp />} />

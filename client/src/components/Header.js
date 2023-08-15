@@ -4,7 +4,7 @@ import './Header.css';
 import logo from '../images/logo.png';
 import { BsList } from 'react-icons/bs';
 
-const Header = () => {
+const Header = ({ isLoggedIn }) => {
   const [open, setOpen] = useState(false);
 
   const handleToggle = () => {
@@ -40,11 +40,19 @@ const Header = () => {
             Pet services
           </Link>
         </li>
-        <li>
-          <Link className="title" to="/login">
-            Account
-          </Link>
-        </li>
+        {isLoggedIn ? (
+          <li>
+            <Link className="title" to="/profile">
+              Account
+            </Link>
+          </li>
+        ) : (
+          <li>
+            <Link className="title" to="/login">
+              Login
+            </Link>
+          </li>
+        )}
       </ul>
     </div>
   );

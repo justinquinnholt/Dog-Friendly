@@ -22,7 +22,6 @@ const app = express();
 const reactStaticDir = new URL('../client/build', import.meta.url).pathname;
 const uploadsStaticDir = new URL('public', import.meta.url).pathname;
 
-app.use(express.static(reactStaticDir));
 // Static directory for file uploads server/public/
 app.use(express.static(uploadsStaticDir));
 app.use(express.json());
@@ -459,6 +458,7 @@ app.get('/api/service/open', async (req, res, next) => {
   }
 });
 
+app.use(express.static(reactStaticDir));
 app.get('*', (req, res) => res.sendFile(`${reactStaticDir}/index.html`));
 
 app.use(errorMiddleware);
