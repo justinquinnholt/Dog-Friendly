@@ -1,0 +1,82 @@
+.service-result-list {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  width: 165px;
+  height: 210px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 1px 9px 1px rgba(76, 76, 76, 0.2);
+  transition: all 0.2s ease-in-out;
+}
+
+.service-result-list:hover {
+  box-shadow: 2px 1px 9px 1px rgba(76, 76, 76, 0.4);
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.service-result-list .img-bookmark {
+  width: 165px;
+  height: 110px;
+  position: relative;
+}
+
+.service-result-list .bookmark-btn {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.service-result-list img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.service-result-list .description {
+  flex: 1;
+  background-color: white;
+}
+
+.service-result-list .description-inner {
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.service-result-list h5 {
+  margin: 0;
+  text-align: center;
+  height: 36px;
+}
+
+.service-result-list p {
+  margin: 0;
+  font-size: 12px;
+}
+
+.rate-container {
+  padding-top: 3px;
+  display: flex;
+}
+
+.review-count {
+  color: #98a3ad;
+}
+
+.star-icon {
+  width: 13px;
+  height: 13px;
+  color: #ffc368;
+}
+
+.bookmark-btn svg {
+  filter: drop-shadow(1px 1px 2px rgb(0 0 0 / 0.5));
+}

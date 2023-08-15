@@ -1,0 +1,91 @@
+.detail-container {
+  height: 100vh;
+  position: relative;
+}
+
+.img-container {
+  height: 375px;
+  position: relative;
+  box-shadow: 0 2px 2px 1px rgba(76, 76, 76, 0.4);
+}
+
+.img-container .back-btn {
+  position: absolute;
+  top: 30px;
+  left: 18px;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.img-container .bookmark-btn {
+  position: absolute;
+  top: 30px;
+  right: 18px;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.description-container .description-inner {
+  padding: 30px;
+}
+
+.description-inner-row-two {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.description-container .rate-container {
+  padding-top: 15px;
+}
+
+.hours-container {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 0 30px;
+  height: 180px;
+}
+
+.day-container {
+  display: flex;
+}
+
+.day-container p {
+  font-size: 14px;
+}
+
+.day {
+  width: 80px;
+}
+
+.get-direction-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.get-direction-container button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 315px;
+  height: 35px;
+  border-radius: 25px;
+  border: none;
+  padding: 0;
+  background-color: #25807a;
+  color: #fff;
+}
+
+.button-text {
+  margin-left: 5px;
+}
+
+.back-btn svg {
+  filter: drop-shadow(0 0 1px rgb(0 0 0 / 0.5));
+}

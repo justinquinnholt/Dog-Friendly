@@ -1,0 +1,47 @@
+.business-preview-container {
+  list-style-type: none;
+  display: flex;
+  width: 230px;
+  height: 90px;
+  margin-bottom: 15px;
+}
+
+.business-preview-container .description {
+  flex: 1;
+  background-color: white;
+}
+
+.business-preview-container .description-inner {
+  padding: 5px;
+}
+
+.business-preview-container .description-inner-row-one {
+  display: flex;
+  justify-content: space-between;
+  height: 42px;
+}
+
+.business-preview-container h4 {
+  width: 175px;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+  font-size: 12px;
+}
+
+.rate-container {
+  padding-top: 3px;
+  display: flex;
+}
+
+.review-count {
+  color: #98a3ad;
+}
+
+.star-icon {
+  width: 13px;
+  height: 13px;
+  color: #ffc368;
+}

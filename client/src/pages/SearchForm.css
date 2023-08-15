@@ -1,0 +1,86 @@
+.search-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url('../images/lunabg2.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  /* height: 812px; */
+
+  height: 100vh;
+}
+
+.search-form.submitted {
+  background-image: none;
+  height: fit-content;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 40px;
+  background-color: #fff;
+  border-radius: 25px;
+  margin-top: 200px;
+  box-shadow: 0 0 5px 1px rgba(76, 76, 76, 0.2);
+}
+
+.form-container.submitted {
+  width: 345px;
+  margin: 0;
+}
+
+.form-container-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 270px;
+}
+
+.form-container.submitted .form-container-inner {
+  width: 315px;
+}
+
+.clear-icon,
+.submit-icon {
+  width: 22px;
+  height: 22px;
+  color: #25807a;
+}
+
+.form-container input,
+.clear-btn,
+.submit-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  height: 22px;
+}
+
+.form-container input {
+  width: 80%;
+  height: 100%;
+}
+
+.form-container input:focus {
+  outline: none;
+}
+
+.search-form .current-location-btn {
+  width: 300px;
+  height: 40px;
+  border: none;
+  background-color: #fff;
+  border-radius: 25px;
+  margin-top: 5px;
+  box-shadow: 0 0 5px 1px rgba(76, 76, 76, 0.2);
+}
+
+.search-form.submitted .current-location-btn {
+  width: 345px;
+}
