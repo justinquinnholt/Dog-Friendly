@@ -41,7 +41,7 @@ const Login = ({ setAllServices, setOpenServices }) => {
         const { token } = await res.json();
         sessionStorage.setItem('token', token);
         await loadDataAndUpdateServices(setAllServices, setOpenServices);
-        navigate('/login');
+        navigate('/profile');
       }
     } catch (err) {
       toast.error('Error signing in. Please try again later.', {
