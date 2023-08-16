@@ -71,11 +71,7 @@ const App = () => {
 
   const allBookmark = async () => {
     try {
-      const response = await fetch('/api/bookmarks', {
-        headers: {
-          Authorization: `Bearer ${sessionStorage.getItem('token')}`,
-        },
-      });
+      const response = await fetch('/api/bookmarks');
       if (!response.ok) {
         throw new Error('Failed to save bookmark');
       }
@@ -120,20 +116,10 @@ const App = () => {
     setSubmitted(true);
     try {
       const allResponse = await fetch(
-        `/api/businesses?address=${encodeURIComponent(searchAddress)}`,
-        {
-          headers: {
-            Authorization: `Bearer ${sessionStorage.getItem('token')}`,
-          },
-        }
+        `/api/businesses?address=${encodeURIComponent(searchAddress)}`
       );
       const openResponse = await fetch(
-        `/api/businesses/open?address=${encodeURIComponent(searchAddress)}`,
-        {
-          headers: {
-            Authorization: `Bearer ${sessionStorage.getItem('token')}`,
-          },
-        }
+        `/api/businesses/open?address=${encodeURIComponent(searchAddress)}`
       );
 
       if (!allResponse.ok || !openResponse.ok) {
@@ -215,11 +201,7 @@ const App = () => {
     const loadBookmarkList = async () => {
       try {
         const fetchPromises = bookmark.map(async (businessId) => {
-          const response = await fetch(`/api/businesses/${businessId}`, {
-            headers: {
-              Authorization: `Bearer ${sessionStorage.getItem('token')}`,
-            },
-          });
+          const response = await fetch(`/api/businesses/${businessId}`);
           if (!response.ok) {
             throw new Error('Failed to fetch business details');
           }
@@ -250,11 +232,7 @@ const App = () => {
 
   const handleItemClick = async (business) => {
     try {
-      const response = await fetch(`/api/businesses/${business.id}`, {
-        headers: {
-          Authorization: `Bearer ${sessionStorage.getItem('token')}`,
-        },
-      });
+      const response = await fetch(`/api/businesses/${business.id}`);
       const data = await response.json();
       setSelectedBusiness(data);
       if (location.pathname.includes('/search-results')) {

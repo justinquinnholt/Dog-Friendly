@@ -108,11 +108,6 @@ app.post('/api/auth/sign-out', async (req, res, next) => {
   }
 });
 
-// apiKey
-app.get('/api/key', (req, res) => {
-  res.json({ apiKey: process.env.GOOGLE_API_KEY });
-});
-
 // yelp api
 app.get('/api/businesses', async (req, res) => {
   try {
