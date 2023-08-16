@@ -71,7 +71,11 @@ const App = () => {
 
   const allBookmark = async () => {
     try {
-      const response = await fetch('/api/bookmarks');
+      const response = await fetch('/api/bookmarks', {
+        headers: {
+          Authorization: `Bearer ${sessionStorage.getItem('token')}`,
+        },
+      });
       if (!response.ok) {
         throw new Error('Failed to save bookmark');
       }
@@ -116,10 +120,20 @@ const App = () => {
     setSubmitted(true);
     try {
       const allResponse = await fetch(
-        `/api/businesses?address=${encodeURIComponent(searchAddress)}`
+        `/api/businesses?address=${encodeURIComponent(searchAddress)}`,
+        {
+          headers: {
+            Authorization: `Bearer ${sessionStorage.getItem('token')}`,
+          },
+        }
       );
       const openResponse = await fetch(
-        `/api/businesses/open?address=${encodeURIComponent(searchAddress)}`
+        `/api/businesses/open?address=${encodeURIComponent(searchAddress)}`,
+        {
+          headers: {
+            Authorization: `Bearer ${sessionStorage.getItem('token')}`,
+          },
+        }
       );
 
       if (!allResponse.ok || !openResponse.ok) {
@@ -201,7 +215,11 @@ const App = () => {
     const loadBookmarkList = async () => {
       try {
         const fetchPromises = bookmark.map(async (businessId) => {
-          const response = await fetch(`/api/businesses/${businessId}`);
+          const response = await fetch(`/api/businesses/${businessId}`, {
+            headers: {
+              Authorization: `Bearer ${sessionStorage.getItem('token')}`,
+            },
+          });
           if (!response.ok) {
             throw new Error('Failed to fetch business details');
           }
@@ -232,7 +250,11 @@ const App = () => {
 
   const handleItemClick = async (business) => {
     try {
-      const response = await fetch(`/api/businesses/${business.id}`);
+      const response = await fetch(`/api/businesses/${business.id}`, {
+        headers: {
+          Authorization: `Bearer ${sessionStorage.getItem('token')}`,
+        },
+      });
       const data = await response.json();
       setSelectedBusiness(data);
       if (location.pathname.includes('/search-results')) {
