@@ -1,6 +1,6 @@
 ## Project:1 - Building a WebApp
 
-Dog-Friendly | [Figma](https://www.figma.com/file/1AjhvXajgU3jWRjsQQBw9C/Gyuli-Kim---Final-Project?type=design&node-id=1%3A3&mode=design&t=K18sViL8k7hP4OWh-1) | [Live](https://dog-friendly.gyulizoeykim.com/)
+Dog-Friendly | [Figma](https://www.figma.com/file/1AjhvXajgU3jWRjsQQBw9C/Gyuli-Kim---Final-Project?type=design&node-id=1%3A3&mode=design&t=K18sViL8k7hP4OWh-1) | [Live](https://dog-friendly.gkim.dev/)
 
 Built a webapp where user can search, view detail, save dog-friendly places
 
