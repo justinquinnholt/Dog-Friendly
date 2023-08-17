@@ -4,6 +4,19 @@ Dog-Friendly | [Figma](https://www.figma.com/file/1AjhvXajgU3jWRjsQQBw9C/Gyuli-K
 
 Built a webapp where user can search, view detail, save dog-friendly places
 
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)
+![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white)
+![AWS](https://img.shields.io/badge/AWS-%23FF9900.svg?style=for-the-badge&logo=amazon-aws&logoColor=white)
+
+---
+
+![search](https://github.com/gyuli-zoeykim/dog-friendly/assets/111097580/2d938b67-b3db-4d08-bd18-d6f67f0c594b)
+![bookmark](https://github.com/gyuli-zoeykim/dog-friendly/assets/111097580/5cb59271-c823-449f-b677-fb602944037d)
+
 ---
 
 ### Key Features:
@@ -21,7 +34,7 @@ Built a webapp where user can search, view detail, save dog-friendly places
 
 ---
 
-### Skills
+### Skills:
 
 1. React Router
    1. Utilized React Router to to navigate between different sections of the app.
