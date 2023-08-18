@@ -18,12 +18,10 @@ const db = new pg.Pool({
 
 const app = express();
 
-// Create paths for static directories
 const reactStaticDir = new URL('../client/build', import.meta.url).pathname;
 const uploadsStaticDir = new URL('public', import.meta.url).pathname;
 
 app.use(express.static(reactStaticDir));
-// Static directory for file uploads server/public/
 app.use(express.static(uploadsStaticDir));
 app.use(express.json());
 app.use(cors());
@@ -108,7 +106,6 @@ app.post('/api/auth/sign-out', async (req, res, next) => {
   }
 });
 
-// yelp api
 app.get('/api/businesses', async (req, res) => {
   try {
     const { address } = req.query;
@@ -286,10 +283,7 @@ app.delete('/api/bookmarks/:placeId', async (req, res) => {
   }
 });
 
-app.use(authorizationMiddleware);
-
-// profile
-app.get('/api/profile', async (req, res, next) => {
+app.get('/api/profile', authorizationMiddleware, async (req, res, next) => {
   try {
     const userId = req.user.userId;
     const sql = `
@@ -321,7 +315,7 @@ app.get('/api/profile', async (req, res, next) => {
   }
 });
 
-app.post('/api/profile', async (req, res, next) => {
+app.post('/api/profile', authorizationMiddleware, async (req, res, next) => {
   try {
     const { dogName, streetAddress, city, state, zipcode } = req.body;
     const userId = req.user.userId;
@@ -351,38 +345,42 @@ app.post('/api/profile', async (req, res, next) => {
   }
 });
 
-app.put('/api/profile/:profileId', async (req, res, next) => {
-  try {
-    const profileId = Number(req.params.profileId);
-    const { dogName, streetAddress, city, state, zipcode } = req.body;
+app.put(
+  '/api/profile/:profileId',
+  authorizationMiddleware,
+  async (req, res, next) => {
+    try {
+      const profileId = Number(req.params.profileId);
+      const { dogName, streetAddress, city, state, zipcode } = req.body;
 
-    if (!dogName || !streetAddress || !city || !state || !zipcode) {
-      throw new ClientError('Required fields are missing');
-    }
+      if (!dogName || !streetAddress || !city || !state || !zipcode) {
+        throw new ClientError('Required fields are missing');
+      }
 
-    const profileUpdateSql = `
+      const profileUpdateSql = `
       UPDATE "profile"
       SET "dogName" = $1, "streetAddress" = $2, "city" = $3, "state" = $4, "zipcode" = $5
       WHERE "profileId" = $6;
     `;
 
-    const profileUpdateParams = [
-      dogName,
-      streetAddress,
-      city,
-      state,
-      zipcode,
-      profileId,
-    ];
-    await db.query(profileUpdateSql, profileUpdateParams);
+      const profileUpdateParams = [
+        dogName,
+        streetAddress,
+        city,
+        state,
+        zipcode,
+        profileId,
+      ];
+      await db.query(profileUpdateSql, profileUpdateParams);
 
-    res.json({ message: 'Profile and category data updated successfully' });
-  } catch (err) {
-    next(err);
+      res.json({ message: 'Profile and category data updated successfully' });
+    } catch (err) {
+      next(err);
+    }
   }
-});
+);
 
-app.get('/api/service/all', async (req, res, next) => {
+app.get('/api/service/all', authorizationMiddleware, async (req, res, next) => {
   try {
     const userId = req.user.userId;
     const profileQuery = `
@@ -418,41 +416,45 @@ app.get('/api/service/all', async (req, res, next) => {
   }
 });
 
-app.get('/api/service/open', async (req, res, next) => {
-  try {
-    const userId = req.user.userId;
-    const profileQuery = `
+app.get(
+  '/api/service/open',
+  authorizationMiddleware,
+  async (req, res, next) => {
+    try {
+      const userId = req.user.userId;
+      const profileQuery = `
       SELECT "streetAddress", "city", "state", "zipcode"
       FROM "profile"
       WHERE "profileId" = $1
     `;
-    const profileValues = [userId];
-    const profileResult = await db.query(profileQuery, profileValues);
-    const profileData = profileResult.rows[0];
+      const profileValues = [userId];
+      const profileResult = await db.query(profileQuery, profileValues);
+      const profileData = profileResult.rows[0];
 
-    if (!profileData) {
-      return res.status(404).json({ error: 'Profile not found' });
+      if (!profileData) {
+        return res.status(404).json({ error: 'Profile not found' });
+      }
+
+      const address = `${profileData.streetAddress}, ${profileData.city}, ${profileData.state} ${profileData.zipcode}`;
+      const apiUrl = `https://api.yelp.com/v3/businesses/search?term=dog+pet+friendly&location=${encodeURIComponent(
+        address
+      )}&radius=2000&open_now=true`;
+
+      const response = await fetch(apiUrl, {
+        headers: {
+          Authorization: `Bearer ${process.env.YELP_API_KEY}`,
+        },
+      });
+
+      const data = await response.json();
+      res.json(data.businesses);
+    } catch (error) {
+      res
+        .status(500)
+        .json({ error: 'An error occurred while searching businesses.' });
     }
-
-    const address = `${profileData.streetAddress}, ${profileData.city}, ${profileData.state} ${profileData.zipcode}`;
-    const apiUrl = `https://api.yelp.com/v3/businesses/search?term=dog+pet+friendly&location=${encodeURIComponent(
-      address
-    )}&radius=2000&open_now=true`;
-
-    const response = await fetch(apiUrl, {
-      headers: {
-        Authorization: `Bearer ${process.env.YELP_API_KEY}`,
-      },
-    });
-
-    const data = await response.json();
-    res.json(data.businesses);
-  } catch (error) {
-    res
-      .status(500)
-      .json({ error: 'An error occurred while searching businesses.' });
   }
-});
+);
 
 app.get('*', (req, res) => res.sendFile(`${reactStaticDir}/index.html`));
 
