@@ -59,4 +59,5 @@
 
 .signup-container .input-row p {
   color: #f15e54;
+  max-width: 300px;
 }
