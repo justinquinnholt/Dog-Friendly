@@ -2,7 +2,7 @@
 
 Dog-Friendly | [Figma](https://www.figma.com/file/1AjhvXajgU3jWRjsQQBw9C/Gyuli-Kim---Final-Project?type=design&node-id=1%3A3&mode=design&t=K18sViL8k7hP4OWh-1) | [Live](https://dog-friendly.gkim.dev/)
 
-Built a webapp where user can search, view detail, save dog-friendly places
+Built a webapp where user can search, view detail and save dog-friendly places. I adopted a puppy few months ago, which inspired me to make this webapp.
 
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
@@ -31,21 +31,5 @@ Built a webapp where user can search, view detail, save dog-friendly places
    1. Users can switch between list view and map view for business listings.
 1. Recommended Businesses
    1. Suggests pet walking, training, grooming type of services to users. Recommendations are based on user's location saved on their profile.
-
----
-
-### Skills:
-
-1. React Router
-   1. Utilized React Router to to navigate between different sections of the app.
-1. Hooks
-   1. Managing states using useState and useEffect hooks.
-1. API Integration
-   1. Retrieve business data from Yelp's API based on user's search location.
-   1. Used Google Maps API to show business locations.
-1. Server Development
-   1. Built a back-end server using Node.js and Express to handle API requests, manage bookmarks, and interact with the database.
-1. Database
-   1. Used PostgreSQL to manage data like bookmark, place and user's profile.
 
 ---
