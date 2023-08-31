@@ -16,6 +16,11 @@
       "src": "logo512.png",
       "type": "image/png",
       "sizes": "512x512"
+    },
+    {
+      "src": "open-graph-image.jpeg",
+      "type": "image/jpeg",
+      "sizes": "1020x680"
     }
   ],
   "start_url": ".",
