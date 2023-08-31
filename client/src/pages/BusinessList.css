@@ -16,7 +16,7 @@
 }
 
 .view-type-container {
-  width: 70px;
+  width: 86px;
   display: flex;
   justify-content: space-between;
 }
@@ -40,7 +40,7 @@ ul {
 }
 
 .view {
-  width: 34px;
+  width: 40px;
 }
 
 .filter.open,
