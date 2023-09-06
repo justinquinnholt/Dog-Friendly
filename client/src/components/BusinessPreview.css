@@ -2,7 +2,6 @@
   list-style-type: none;
   display: flex;
   width: 230px;
-  height: 90px;
   margin-bottom: 15px;
 }
 
@@ -38,10 +37,4 @@ p {
 
 .review-count {
   color: #98a3ad;
-}
-
-.star-icon {
-  width: 13px;
-  height: 13px;
-  color: #ffc368;
 }

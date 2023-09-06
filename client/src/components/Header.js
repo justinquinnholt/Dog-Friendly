@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
 import './Header.css';
 import logo from '../images/logo.png';
 import { BsList } from 'react-icons/bs';
+import MenuItems from './MenuItems';
 
 const Header = ({ isLoggedIn }) => {
   const [open, setOpen] = useState(false);
@@ -17,42 +17,18 @@ const Header = ({ isLoggedIn }) => {
         <div className="logo">
           <img src={logo} alt="Logo" />
         </div>
+        <ul className={`menu-horizontal`}>
+          <MenuItems isLoggedIn={isLoggedIn} />
+        </ul>
         <div className="menu-icon" onClick={handleToggle}>
           {!open && <BsList className="bslist-icon" />}
         </div>
       </div>
       {open && <div className="shade" onClick={handleToggle}></div>}
       <ul
-        className={open ? 'menu-items open' : 'menu-items'}
+        className={`menu-vertical ${open ? 'open' : ''}`}
         onClick={handleToggle}>
-        <li>
-          <Link className="title" to="/">
-            Search
-          </Link>
-        </li>
-        <li>
-          <Link className="title" to="/bookmark">
-            Bookmarks
-          </Link>
-        </li>
-        <li>
-          <Link className="title" to="/service">
-            Pet services
-          </Link>
-        </li>
-        {isLoggedIn ? (
-          <li>
-            <Link className="title" to="/profile">
-              Account
-            </Link>
-          </li>
-        ) : (
-          <li>
-            <Link className="title" to="/login">
-              Login
-            </Link>
-          </li>
-        )}
+        <MenuItems isLoggedIn={isLoggedIn} />
       </ul>
     </div>
   );

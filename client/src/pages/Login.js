@@ -88,7 +88,7 @@ const Login = ({ setAllServices, setOpenServices }) => {
         </form>
         <div className="row">
           <Link to="/signup" className="signup-link-container">
-            <p>
+            <p className="sign-up-message">
               Don't have an account? <span className="signup">Sign up</span>
             </p>
           </Link>

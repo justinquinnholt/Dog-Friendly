@@ -34,7 +34,6 @@ const SearchForm = ({
             setCurrentLocationError(
               'An error occurred while fetching your location.'
             );
-            console.error(error);
           }
         },
         (error) => {
@@ -64,40 +63,44 @@ const SearchForm = ({
 
   return (
     <div className={`search-form ${submitted ? 'submitted' : ''}`}>
-      <form
-        className={`form-container ${submitted ? 'submitted' : ''}`}
-        onSubmit={handleSearch}>
-        <div className="form-container-inner">
-          {showUseCurrentLocation && (
-            <button
-              type="button"
-              className="clear-btn"
-              onClick={handleClearInput}>
-              <AiOutlineClose className="clear-icon" />
+      <div className="search-form-inner">
+        <form
+          className={`form-container ${submitted ? 'submitted' : ''}`}
+          onSubmit={handleSearch}>
+          <div className="form-container-inner">
+            {showUseCurrentLocation && (
+              <button
+                type="button"
+                className="clear-btn"
+                onClick={handleClearInput}>
+                <AiOutlineClose className="clear-icon" />
+              </button>
+            )}
+            <input
+              type="text"
+              value={searchAddress}
+              onChange={(e) => setSearchAddress(e.target.value)}
+              name="search"
+              placeholder="Enter Location"
+              onFocus={handleInputFocus}
+              onBlur={handleInputBlur}
+            />
+            <button type="submit" className="submit-btn">
+              <BsArrowRightCircle className="submit-icon" />
             </button>
-          )}
-          <input
-            type="text"
-            value={searchAddress}
-            onChange={(e) => setSearchAddress(e.target.value)}
-            name="search"
-            placeholder="Enter Location"
-            onFocus={handleInputFocus}
-            onBlur={handleInputBlur}
-          />
-          <button type="submit" className="submit-btn">
-            <BsArrowRightCircle className="submit-icon" />
+          </div>
+        </form>
+        {showUseCurrentLocation && (
+          <button
+            className="current-location-btn"
+            onClick={handleUseCurrentLocation}>
+            Current Location
           </button>
-        </div>
-      </form>
-      {showUseCurrentLocation && (
-        <button
-          className="current-location-btn"
-          onClick={handleUseCurrentLocation}>
-          Use Current Location
-        </button>
-      )}
-      {currentLocationError && <p>{currentLocationError}</p>}
+        )}
+        {currentLocationError && (
+          <p className="current-location-err">{currentLocationError}</p>
+        )}
+      </div>
     </div>
   );
 };

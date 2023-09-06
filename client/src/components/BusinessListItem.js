@@ -60,17 +60,22 @@ const BusinessListItem = ({
         <div className="description-inner">
           <div className="description-inner-row-one">
             <h4>{name}</h4>
-            <p style={{ color: openStatus ? '#25807A' : '#98A3AD' }}>
+            <p
+              className="description-status"
+              style={{ color: openStatus ? '#25807A' : '#98A3AD' }}>
               {openStatus ? 'open' : 'closed'}
             </p>
           </div>
-          <p style={{ color: '#98A3AD' }}>
-            {location.address1},<br />
+          <p className="description-location" style={{ color: '#98A3AD' }}>
+            {location.address1 === null || location.address1 === ''
+              ? ''
+              : `${location.address1},`}
+            <br />
             {location.city}, {location.state} {location.zip_code}
           </p>
           <div className="rate-container">
-            <Stars rating={rating} />
-            <p>
+            <Stars className="star-icon" rating={rating} />
+            <p className="description-rating">
               {rating}
               <span className="review-count">
                 ({formatNumber(review_count)})

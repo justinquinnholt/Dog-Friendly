@@ -1,56 +1,45 @@
 .search-form {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  background-image: url('../images/lunabg2.jpeg');
+  background-image: url('../images/landingbg.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-
-  /* height: 812px; */
-
   height: 100vh;
 }
 
 .search-form.submitted {
   background-image: none;
   height: fit-content;
+  padding: 0 15px;
 }
 
-.form-container {
+.search-form-inner {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 300px;
-  height: 40px;
-  background-color: #fff;
-  border-radius: 25px;
-  margin-top: 200px;
-  box-shadow: 0 0 5px 1px rgba(76, 76, 76, 0.2);
+  height: fit-content;
 }
 
-.form-container.submitted {
-  width: 345px;
-  margin: 0;
+.form-container {
+  display: flex;
+  width: 750px;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  background-color: #fff;
+  border-radius: 25px;
+  box-shadow: 0 0 5px 1px rgba(76, 76, 76, 0.2);
 }
 
 .form-container-inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 270px;
-}
-
-.form-container.submitted .form-container-inner {
-  width: 315px;
-}
-
-.clear-icon,
-.submit-icon {
-  width: 22px;
-  height: 22px;
-  color: #25807a;
+  gap: 10px;
+  width: 94%;
 }
 
 .form-container input,
@@ -58,22 +47,39 @@
 .submit-btn {
   background: none;
   border: none;
+}
+
+.clear-btn,
+.submit-btn {
+  width: 30px;
+  height: 30px;
+}
+
+.clear-icon,
+.submit-icon {
+  height: 100%;
+  width: auto;
+  color: #25807a;
   padding: 0;
-  height: 22px;
 }
 
 .form-container input {
-  width: 80%;
-  height: 100%;
+  width: 100%;
+  height: 30px;
+  font-size: 16px;
+  text-align: center;
 }
 
 .form-container input:focus {
   outline: none;
+  text-align: left;
 }
 
-.search-form .current-location-btn {
-  width: 300px;
-  height: 40px;
+.current-location-btn {
+  font-size: 16px;
+  display: block;
+  width: 750px;
+  height: 50px;
   border: none;
   background-color: #fff;
   border-radius: 25px;
@@ -81,6 +87,28 @@
   box-shadow: 0 0 5px 1px rgba(76, 76, 76, 0.2);
 }
 
-.search-form.submitted .current-location-btn {
-  width: 345px;
+.current-location-err {
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+@media (width <= 480px) {
+  .form-container,
+  .current-location-btn {
+    width: 100%;
+    min-width: 300px;
+    height: 40px;
+  }
+
+  .search-form {
+    padding: 0 15px;
+  }
+}
+
+@media (width >= 481px) and (width <= 850px) {
+  .form-container,
+  .current-location-btn {
+    min-width: 460px;
+    width: 100%;
+  }
 }
