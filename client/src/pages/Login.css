@@ -17,6 +17,7 @@
 
 .login-heading h4 {
   text-align: center;
+  font-weight: 500;
 }
 
 .login-container form {
@@ -60,6 +61,10 @@
 }
 
 .login-container .signup {
-  color: #25807a;
+  color: white;
   width: 50px;
+}
+
+.sign-up-message {
+  font-size: 16px;
 }

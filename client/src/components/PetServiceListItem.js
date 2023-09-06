@@ -56,7 +56,10 @@ const PetServiceListItem = ({
         <div className="description-inner">
           <h5>{name}</h5>
           <p style={{ color: '#98A3AD' }}>
-            {location.address1},<br />
+            {location.address1 === null || location.address1 === ''
+              ? ''
+              : `${location.address1},`}
+            <br />
             {location.city}, {location.state} {location.zip_code}
           </p>
           <p style={{ color: '#25807A', paddingTop: '5px' }}>

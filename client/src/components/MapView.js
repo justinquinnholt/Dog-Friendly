@@ -33,7 +33,7 @@ const MapView = ({
   };
 
   const mapStyles = {
-    height: '100vh',
+    height: '80vh',
     width: '100%',
   };
 
@@ -114,10 +114,14 @@ const MapView = ({
             formatNumber={formatNumber}
           />
           <div className="preview-btn-container" style={previewBtnStyles}>
-            <button onClick={() => handleItemClick(selectedBusiness)}>
+            <button
+              className="preview-btn"
+              onClick={() => handleItemClick(selectedBusiness)}>
               View Details
             </button>
-            <button onClick={handleCloseModal}>Close</button>
+            <button className="preview-btn close" onClick={handleCloseModal}>
+              Close
+            </button>
           </div>
         </BusinessModal>
       )}

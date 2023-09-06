@@ -1,6 +1,6 @@
 import './BusinessPreview.css';
-import { BsStarFill } from 'react-icons/bs';
 import { useLocation } from 'react-router-dom';
+import Stars from './Stars';
 
 const BusinessPreview = ({
   business,
@@ -34,8 +34,8 @@ const BusinessPreview = ({
             </p>
           ) : (
             <div className="rate-container">
-              <BsStarFill className="star-icon" />
-              <p>
+              <Stars className="star-icon" rating={rating} />
+              <p className="description-rating">
                 {rating}
                 <span className="review-count">
                   ({formatNumber(review_count)})

@@ -29,7 +29,7 @@ const BusinessList = ({
   const handleViewTypeChange = (type) => {
     setViewType(type);
   };
-
+  console.log(allBusinesses);
   return (
     <div className="search-result-container">
       <div className="filter-container">

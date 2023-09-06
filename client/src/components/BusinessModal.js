@@ -9,7 +9,8 @@ const BusinessModal = ({ onClose, children }) => {
     backgroundColor: '#fff',
     padding: '20px',
     zIndex: 100,
-    height: '130px',
+    height: '180px',
+    borderRadius: '5px',
   };
 
   return <div style={modalStyles}>{children}</div>;

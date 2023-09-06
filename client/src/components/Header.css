@@ -14,13 +14,18 @@
   height: 74px;
 }
 
+.logo {
+  padding-top: 7px;
+}
+
 .logo img {
-  width: 138px;
+  width: 140px;
 }
 
 .menu-icon {
   cursor: pointer;
   height: 32px;
+  display: none;
 }
 
 .bslist-icon {
@@ -38,7 +43,15 @@
   z-index: 99;
 }
 
-.menu-items {
+.menu-horizontal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  gap: 12px;
+}
+
+.menu-vertical {
   position: absolute;
   top: 0;
   right: 0;
@@ -46,26 +59,79 @@
   width: 200px;
   height: 100vh;
   background-color: #fff;
-  list-style: none;
   margin: 0;
-  padding: 20px;
+  padding: 60px 30px;
   transition: transform 0.3s ease;
   z-index: 999;
 }
 
-.menu-items.open {
+.menu-vertical.open {
   transform: translateX(0);
 }
 
-.menu-items li {
-  margin-bottom: 10px;
+li {
+  list-style: none;
+  width: fit-content;
+}
+
+.menu-vertical li {
+  margin-bottom: 15px;
+  transition: transform 0.3s ease-in-out;
 }
 
 .title {
-  color: #000;
   text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
 }
 
-.title:hover {
+.menu-horizontal .title {
   color: #25807a;
+}
+
+.menu-vertical .title {
+  color: #000;
+  font-size: 24px;
+}
+
+.menu-horizontal li:hover .title {
+  color: #ff9334;
+}
+
+.menu-vertical li:hover {
+  transform: translateX(20px);
+}
+
+.menu-vertical li:hover .title {
+  color: #25807a;
+}
+
+.menu-vertical .dog-icon {
+  display: none;
+}
+
+.menu-horizontal .dog-icon {
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path 0.3s ease;
+  padding-right: 5px;
+}
+
+.menu-horizontal li:hover .dog-icon {
+  clip-path: inset(0);
+}
+
+.menu-vertical li:hover .dog-icon {
+  display: inline;
+  margin-right: 10px;
+}
+
+@media (width <=850px) {
+  .menu-icon {
+    display: block;
+  }
+
+  .menu-horizontal {
+    display: none;
+  }
 }

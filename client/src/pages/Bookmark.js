@@ -31,7 +31,9 @@ const Bookmark = ({
           <h3>Bookmarks</h3>
         </div>
         {bookmarkList.length === 0 ? (
-          <div className="bookmark-not-found">Bookmark not found</div>
+          <div className="bookmark-not-found">
+            <h3>Bookmark not found</h3>
+          </div>
         ) : (
           <BusinessList
             selectedBusiness={selectedBusiness}

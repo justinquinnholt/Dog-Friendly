@@ -132,7 +132,7 @@ const BusinessDetail = ({
       <div className="description-container">
         <div className="description-inner">
           <div className="description-inner-row-one">
-            <h4>{name}</h4>
+            <h4 className="business-name">{name}</h4>
             <p
               style={{
                 color:
@@ -145,9 +145,11 @@ const BusinessDetail = ({
           </div>
           <div className="description-inner-row-two">
             <p>
-              {location?.address1 || ''},<br />
-              {location?.city || ''}, {location?.state || ''}{' '}
-              {location?.zip_code || ''}
+              {location.address1 === null || location.address1 === ''
+                ? 'Street Address Not Provided'
+                : `${location.address1},`}
+              <br />
+              {location.city}, {location.state} {location.zip_code}
             </p>
             <p style={{ cursor: 'pointer' }}>{display_phone}</p>
           </div>
