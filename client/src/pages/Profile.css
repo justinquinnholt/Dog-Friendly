@@ -109,5 +109,9 @@
 .edit-btn {
   color: #98a3ad;
   background-color: #fff;
-  border-color: #98a3ad;
+  border: 1px solid #98a3ad;
+}
+
+.profile-container button {
+  border-radius: 5px;
 }

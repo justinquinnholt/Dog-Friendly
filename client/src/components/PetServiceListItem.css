@@ -2,8 +2,8 @@
   list-style-type: none;
   display: flex;
   flex-direction: column;
-  width: 165px;
-  height: 225px;
+  width: 155px;
+  height: 230px;
   margin-bottom: 15px;
   border-radius: 5px;
   overflow: hidden;
@@ -18,7 +18,7 @@
 }
 
 .service-result-list .img-bookmark {
-  width: 165px;
+  width: 155px;
   height: 110px;
   position: relative;
 }
@@ -55,6 +55,7 @@
   margin: 0;
   text-align: center;
   height: 36px;
+  overflow: hidden;
 }
 
 .service-result-list p {
