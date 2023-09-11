@@ -139,10 +139,12 @@ p {
 .modal-btn button {
   width: 80px;
   height: 24px;
+  border-radius: 5px;
 }
 
 .modal-btn .cancel-btn {
   background-color: #fff;
+  border: 1px solid #98a3ad;
 }
 
 .modal-btn .delete-btn {
@@ -157,12 +159,19 @@ p {
 
 @media (width <=480px) {
   .search-result-list {
-    min-width: 345px;
     overflow: hidden;
   }
 
   h4 {
     font-size: 16px;
+  }
+
+  .description-inner-row-one h4 {
+    overflow-x: hidden;
+  }
+
+  .description-inner p {
+    font-size: 14px;
   }
 }
 
